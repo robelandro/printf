@@ -1,3 +1,4 @@
+#include "main.h"
 #include <unistd.h>
 #include <stdio.h>
 /**
@@ -9,7 +10,7 @@
  */
 int print_char(va_list arg)
 {
-        return (_putchar(va_arg(arg, int)));
+	return (_putchar(va_arg(arg, int)));
 }
 
 /**
@@ -24,15 +25,15 @@ int i;
 char *str = va_arg(arg, char*);
 
 if (str == NULL)
-        str = "(null)";
+	str = "(null)";
 else if (*str == '\0')
-        return (-1);
+	return (-1);
 
 for (i = 0; str[i]; i++)
-        _putchar(str[i]);
+	_putchar(str[i]);
 
 return (i);
-
+}
 /**
  * print_int - prints an integer.
  * @arg: argument
@@ -47,7 +48,17 @@ int n = va_arg(arg, int);
 
 if (n < 0)
 {
-        _putchar('-');
-        charPrinted++;
-        n *= -1;
+	_putchar('-');
+	charPrinted++;
+	n *= -1;
+}
+for (i = 0; n / divisor > 9; i++, divisor *= 10)
+;
+
+for (; divisor >= 1; n %= divisor, divisor /= 10, charPrinted++)
+{
+	resp = n / divisor;
+	_putchar('0' + resp);
+}
+return (charPrinted);
 }
