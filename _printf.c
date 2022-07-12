@@ -1,0 +1,50 @@
+#include "main.h"
+#include <stdlib.h>
+
+/**
+ * _printf - mimic printf from stdio
+ * Description: produces output according to a format
+ * write output to stdout, the standard output stream
+ * @format: character string composed of zero or more directives
+ *
+ * Return: the number of characters printed
+ * (excluding the null byte used to end output to strings)
+ */
+int _printf(const char *format, ...)
+{
+	unsigned int i, j, charPrinted = 0;
+	va_list arg;
+
+	ditacterstruct array_func[] = {
+		{"c", print_char},
+		{"s", print_str},
+		{NULL, NULL}
+	};
+
+	va_start(arg, format);
+
+	if (format == NULL)
+		return (-1);
+
+	for (i = 0; format[i] != '\0'; i++)
+	{
+		if (format[i] != '%')
+		{
+			_putchar(format[i]);
+			charPrinted++;
+			continue;
+		}
+		i++;
+		for (j = 0; array_func[j].indentifier != NULL; j++)
+		{
+			if (array_func[j].indentifier[0] == format[i])
+			{
+				array_func[j].printer(arg);
+				charPrinted++;
+			}
+		}
+	}
+	va_end(arg);
+
+	return (charPrinted);
+}
