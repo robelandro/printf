@@ -64,7 +64,6 @@ int _printf(const char *format, ...)
 			continue;
 		}
 		if (format[i + 1] == '\0')
-
 			return (-1);
 
 		dietactedPrinted = printditactor(format[i + 1], arg);
