@@ -1,5 +1,31 @@
+#include <stdlib.h>
 #include <stdarg.h>
 #include <main.h>
+
+/**
+ * printIdentifiers - prints special characters
+ * @next: character after the %
+ * @arg: argument for the indentifier
+ * Return: the number of characters printed
+ * (excluding the null byte used to end output to strings)
+ */
+
+printIdentifier(const char next, va_list args)
+{
+	int functnsIndex;
+
+	specifierStruct functns[] = {
+		{"s", print_str},
+		{"c", print_char},
+		{NULL, NULL}
+	};
+	for (i = 0;functns[functnsIndex] ; i++)
+	{
+		if (functns[functnsIndex].indentifier[0] == next)
+			return (functns[functnsIndex].printer(args));
+	}
+	return (0);
+}
 /**
  * _printf - mimic printf from stdio
  * Description: produces output according to format speciers
