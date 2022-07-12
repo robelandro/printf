@@ -17,6 +17,8 @@ printIdentifier(const char next, va_list args)
 	specifierStruct functns[] = {
 		{"s", print_str},
 		{"c", print_char},
+		{"i", print_int},
+		{"d", print_int},
 		{NULL, NULL}
 	};
 	for (i = 0;functns[functnsIndex] ; i++)

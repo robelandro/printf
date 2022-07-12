@@ -32,3 +32,22 @@ for (i = 0; str[i]; i++)
         _putchar(str[i]);
 
 return (i);
+
+/**
+ * print_int - prints an integer.
+ * @arg: argument
+ * Return: 0
+ */
+
+int print_int(va_list arg)
+{
+
+unsigned int divisor = 1, i, resp, charPrinted = 0;
+int n = va_arg(arg, int);
+
+if (n < 0)
+{
+        _putchar('-');
+        charPrinted++;
+        n *= -1;
+}
