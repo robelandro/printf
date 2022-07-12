@@ -19,6 +19,7 @@ printIdentifier(const char next, va_list args)
 		{"c", print_char},
 		{"i", print_int},
 		{"d", print_int},
+		{"b", print_unsignedToBinary},
 		{NULL, NULL}
 	};
 	for (i = 0;functns[functnsIndex] ; i++)
