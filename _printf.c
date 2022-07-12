@@ -7,6 +7,7 @@
  * Return: the number of characters printed
  * (excluding the null byte used to end output to strings)
  */
+
 int printditactor(char next, va_list arg)
 {
 	int index;
@@ -14,6 +15,9 @@ int printditactor(char next, va_list arg)
 	ditacterstruct array_func[] = {
 		{"c", print_char},
 		{"s", print_str},
+		{"i", print_int},
+		{"d", print_int},
+		{"b", print_unsignedToBinary},
 		{NULL, NULL}
 	};
 
@@ -60,6 +64,7 @@ int _printf(const char *format, ...)
 			continue;
 		}
 		if (format[i + 1] == '\0')
+
 			return (-1);
 
 		dietactedPrinted = printditactor(format[i + 1], arg);
