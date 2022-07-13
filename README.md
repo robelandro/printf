@@ -17,7 +17,7 @@ below. This function write its output to the stdout, the standard output stream.
 
 ## Usage example
 
-```
+```c
 
 #include <limits.h>
 #include <stdio.h>
@@ -31,7 +31,7 @@ below. This function write its output to the stdout, the standard output stream.
 int main(void)
 {
 	int len;
-	int len2;
+	int len2 , len3, len4;
 
 	len = _printf("Let's try to printf a simple sentence.\n");
 	len2 = printf("Let's try to printf a simple sentence.\n");
@@ -47,6 +47,18 @@ int main(void)
 	len2 = printf("Percent:[%%]\n");
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
+	_printf("There is %b bytes in %b KB\n", 1024, 1);
+
+	len3 = _printf("%b\n", 1024);
+	len4 = printf("10000000000\n");
+	fflush(stdout);
+	if (len3 != len4)
+	{
+		printf("FAILED %d  %d\n", len3, len4);
+		printf("Lengths differ.\n");
+		fflush(stdout);
+		return (1);
+	}
 	return (0);
 }
 

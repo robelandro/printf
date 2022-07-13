@@ -15,7 +15,7 @@ int print_unsignedToBinary(va_list arg);
 int printditactor(char next, va_list arg);
 
 /**
- * struct identifierStruct - structure definition of a printTypeStruct
+ * struct ditacterstruct - structure definition of a printTypeStruct
  * @indentifier: type
  * @printer: function to print
  */
