@@ -27,9 +27,12 @@ int main(void)
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
 	_printf("There is %b bytes in %b KB\n", 1024, 1);
-
-	len3 = _printf("%b\n", 1024);
-	len4 = printf("10000000000\n");
+	_printf("%b\n", 1024);
+	printf("10000000000\n");
+	len3 = _printf("%p", (void *)0x7fff5100b608);
+	printf("\n");
+	len4 = printf("%p", (void *)0x7fff5100b608);
+	printf("\n");
 	fflush(stdout);
 	if (len3 != len4)
 	{
