@@ -14,6 +14,7 @@ void print_binary(unsigned int n, unsigned int *printed);
 int print_unsignedToBinary(va_list arg);
 int printditactor(char next, va_list arg);
 int print_address(va_list ap);
+void loop_print(char *a);
 
 /**
  * struct ditacterstruct - structure definition of a printTypeStruct

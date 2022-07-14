@@ -13,12 +13,15 @@ int print_address(va_list ap)
 	char tmp[1024];
 
 	p = va_arg(ap, long int);
-	if (p == 0)
+	if (p < 0)
 	{
-		_putchar('0');
-		_putchar('x');
-		_putchar('0');
-		return (3);
+		loop_print("0xffffffffffffffff");
+		return (18);
+	}
+	if (!p)
+	{
+		loop_print("(nil)");
+		return (5);
 	}
 	else
 	{

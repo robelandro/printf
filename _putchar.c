@@ -5,8 +5,20 @@
  * @c: the character to print
  * Return: 0 on success and -1 error and errno is set appropiately
  */
-
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
+}
+
+/**
+ * loop_print - prints a string to stdout
+ * @str: pointer to the string to print
+ * Return: void
+ */
+void loop_print(char *str)
+{
+	int i;
+
+	for (i = 0; str[i] != '\0'; i++)
+	_putchar(str[i]);
 }
