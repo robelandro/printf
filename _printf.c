@@ -19,6 +19,7 @@ int printditactor(char next, va_list arg)
 		{"d", print_int},
 		{"b", print_unsignedToBinary},
 		{"p", print_address},
+		{"R", print_rot13},
 		{NULL, NULL}
 	};
 
