@@ -12,6 +12,8 @@ int print_rot13(va_list l)
 	int i, count = 0;
 
 	s = va_arg(l, char *);
+	if (s[0] == '\0')
+	return (-1);
 	if (s == NULL)
 	{
 		_putchar('(');
