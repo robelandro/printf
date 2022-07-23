@@ -15,12 +15,12 @@ int print_address(va_list ap)
 	p = va_arg(ap, long int);
 	if (p < 0)
 	{
-		loop_print("0xffffffffffffffff");
+		_puts("0xffffffffffffffff");
 		return (18);
 	}
 	if (!p)
 	{
-		loop_print("(nil)");
+		_puts("(nil)");
 		return (5);
 	}
 	else

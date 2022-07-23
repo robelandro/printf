@@ -20,6 +20,11 @@ int printditactor(char next, va_list arg)
 		{"b", print_unsignedToBinary},
 		{"p", print_address},
 		{"R", print_rot13},
+		{"u", print_unsigned_int},
+		{"x", print_hex},
+		{"X", print_HEX},
+		{"o", print_oct},
+		{"r", print_reverse},
 		{NULL, NULL}
 	};
 

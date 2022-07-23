@@ -11,14 +11,14 @@ int _putchar(char c)
 }
 
 /**
- * loop_print - prints a string to stdout
+ * _puts - prints a string to stdout
  * @str: pointer to the string to print
  * Return: void
  */
-void loop_print(char *str)
+void _puts(char *str)
 {
 	int i;
 
 	for (i = 0; str[i] != '\0'; i++)
-	_putchar(str[i]);
+		_putchar(str[i]);
 }
