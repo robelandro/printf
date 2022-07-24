@@ -46,3 +46,17 @@ int print_address(va_list ap)
 	}
 	return (count);
 }
+
+/**
+ * hex_to_ascii - converts a hexadecimal number to ascii
+ * 
+ * @n: number to convert
+ * Return: ascii value of the number
+ */
+int hex_to_ascii(int n)
+{
+	if (n > 9)
+		return (n + 'A' - 10);
+	else
+		return (n + '0');
+}
