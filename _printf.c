@@ -25,6 +25,7 @@ int printditactor(char next, va_list arg)
 		{"X", print_HEX},
 		{"o", print_oct},
 		{"r", print_reverse},
+		{"S", print_STR},
 		{NULL, NULL}
 	};
 

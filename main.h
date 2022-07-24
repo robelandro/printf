@@ -22,6 +22,7 @@ int print_hex(va_list ap);
 int print_HEX(va_list ap);
 int print_oct(va_list ap);
 int print_reverse(va_list ap);
+int print_STR(va_list ap);
 
 /**
  * struct ditacterstruct - structure definition of a printTypeStruct

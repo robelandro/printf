@@ -102,3 +102,40 @@ int print_unsignedToBinary(va_list b)
 	}
 	return (count);
 }
+
+/**
+ * print_STR - prints a string with a `S` (upper case) specifier
+ * Non printable characters (0 < ASCII value < 32 or >= 127):are printed
+ * this way : \x, followed by the ASCII code value in hexadecimal
+ * (upper case - always 2 characters)
+ * @ap: argument
+ * Return: number of character printed
+ */
+int print_STR(va_list ap)
+{
+	char *str = va_arg(ap, char*);
+	int i, j, count = 0;
+
+	if (str == NULL)
+		str = "(null)";
+	for (i = 0; str[i]; i++)
+	{
+		if (str[i] < 32 || str[i] >= 127)
+		{
+			_putchar('\\');
+			_putchar('x');
+			count += 2;
+			for (j = 0; j < 2; j++)
+			{
+				_putchar((str[i] >> (4 * j)) & 0xF);
+				count++;
+			}
+		}
+		else
+		{
+			_putchar(str[i]);
+			count++;
+		}
+	}
+	return (count);
+}
