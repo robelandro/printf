@@ -14,6 +14,11 @@ int print_unsigned_int(va_list ap)
 
 	if (str == NULL)
 		return (-1);
+	if (n == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	while (n != 0)
 	{
 		str[i] = n % 10 + '0';
@@ -41,6 +46,11 @@ int print_hex(va_list ap)
 
 	if (str == NULL)
 		return (-1);
+	if (n == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	while (n != 0)
 	{
 		if (n % 16 > 9)
@@ -71,6 +81,11 @@ int print_HEX(va_list ap)
 
 	if (str == NULL)
 		return (-1);
+	if (n == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	while (n != 0)
 	{
 		if (n % 16 > 9)
@@ -101,6 +116,11 @@ int print_oct(va_list ap)
 
 	if (str == NULL)
 		return (-1);
+	if (n == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	while (n != 0)
 	{
 		str[i] = n % 8 + '0';
