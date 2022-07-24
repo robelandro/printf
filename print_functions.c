@@ -135,5 +135,6 @@ int print_STR(va_list ap)
 		else
 			_putchar(str[i]);
 	}
+
 	return (i);
 }
