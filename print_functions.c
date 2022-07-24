@@ -113,29 +113,27 @@ int print_unsignedToBinary(va_list b)
  */
 int print_STR(va_list ap)
 {
+	int i;
 	char *str = va_arg(ap, char*);
-	int i, j, count = 0;
 
 	if (str == NULL)
 		str = "(null)";
+	else if (*str == '\0')
+		return (-1);
+
 	for (i = 0; str[i]; i++)
 	{
-		if (str[i] < 32 || str[i] >= 127)
+		if ((str[i] < 32 && str[i] > 0) || str[i] >= 127)
 		{
 			_putchar('\\');
 			_putchar('x');
-			count += 2;
-			for (j = 0; j < 2; j++)
-			{
-				_putchar((str[i] >> (4 * j)) & 0xF);
-				count++;
-			}
+			if (i < 16)
+				_putchar('0');
+
+			print_unsignedIntToHex(str[i], 'A');
 		}
 		else
-		{
 			_putchar(str[i]);
-			count++;
-		}
 	}
-	return (count);
+	return (i);
 }
